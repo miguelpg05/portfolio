@@ -179,7 +179,16 @@ h3{font-size:1.2rem}
 .ejemplo-cuerpo .boton{margin-top:8px;width:100%}
 
 /* ---------- Por qué ---------- */
-.porque{background:var(--blanco);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.fondo-blanco{background:var(--blanco);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.cta-intermedia{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.cta-intermedia p{font-family:var(--serif);font-weight:600;font-size:1.3rem;line-height:1.3}
+.pasos-titulo{margin-top:56px;margin-bottom:22px;font-size:1.35rem}
+.pasos{display:grid;gap:20px;counter-reset:none}
+.pasos li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.paso-num{width:40px;height:40px;border-radius:50%;background:var(--salvia-suave);color:#2F5A49;display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:1.1rem}
+.pasos strong{display:block;line-height:1.35}
+.pasos p{color:var(--texto-suave);font-size:.97rem;margin-top:2px}
+@media (min-width:820px){.pasos{grid-template-columns:repeat(3,1fr);gap:32px}}
 .razones{display:grid;gap:30px}
 .razones li{display:grid;grid-template-columns:48px 1fr;gap:16px}
 .razones .icono{width:48px;height:48px;border-radius:13px}
@@ -203,6 +212,7 @@ h3{font-size:1.2rem}
 /* ---------- Contacto ---------- */
 .contacto{background:#4E7263;color:#FFFFFF;padding:72px 0 40px}
 .contacto-logo{font-size:2.2rem;line-height:1;margin-bottom:26px}
+.hero-logo{display:block;font-size:clamp(3rem,15vw,5.5rem);line-height:1;margin:0 auto 30px}
 .contacto h2{max-width:18ch}
 .contacto-sub{margin-top:14px;color:#E3ECE7;max-width:32rem}
 .contacto-acciones{display:grid;gap:12px;margin-top:30px;max-width:26rem}
@@ -319,6 +329,7 @@ dialog.vista::backdrop{background:rgba(15,37,55,.6)}
 <!-- Cabecera -->
 <section class="hero" id="inicio">
   <div class="contenedor">
+    <p class="logo hero-logo" role="img" aria-label="Pina"><span class="logo-s">&lt;</span>Pina<span class="logo-s">/&gt;</span></p>
     <div class="hero-persona">
       <img class="foto" src="foto-miguel.jpg" alt="Miguel Pina Gómez" width="68" height="68">
       <p><strong>Miguel Pina Gómez</strong><span>Desarrollo Web &amp; Soluciones Digitales</span></p>
@@ -333,6 +344,73 @@ dialog.vista::backdrop{background:rgba(15,37,55,.6)}
       </a>
     </div>
     <p class="hero-firma">Trato directo, sin intermediarios.</p>
+  </div>
+</section>
+
+<!-- Ejemplos -->
+<section class="seccion fondo-blanco" id="ejemplos">
+  <div class="contenedor">
+    <div class="seccion-intro">
+      <h2>Así podría ser la web de tu negocio</h2>
+      <p>Tres ejemplos que puedes abrir y tocar. Los negocios son inventados; el tuyo llevaría tu nombre, tus fotos y tus precios.</p>
+    </div>
+    <div class="ejemplos-rejilla">
+      <article class="ejemplo">
+        <div class="miniatura mini-barberia" aria-hidden="true"><div><small>Precios · Galería · Reserva</small></div><b>Barbería La Navaja</b><div><i></i><i></i><i></i></div></div>
+        <div class="ejemplo-cuerpo">
+          <h3>Peluquería o barbería de barrio</h3>
+          <p>Lista de precios clara, galería de cortes y un botón para reservar en dos toques.</p>
+          <button class="boton boton-linea" type="button" data-demo="barberia" data-titulo="Peluquería o barbería">Abrir ejemplo</button>
+        </div>
+      </article>
+      <article class="ejemplo">
+        <div class="miniatura mini-veterinaria" aria-hidden="true"><div><small>Citas · Horarios · Urgencias</small></div><b>Clínica Huellas</b><div><i></i><i></i><i></i></div></div>
+        <div class="ejemplo-cuerpo">
+          <h3>Clínica veterinaria o de salud</h3>
+          <p>Cita previa sin llamadas, horarios siempre a la vista y el teléfono de urgencias bien visible.</p>
+          <button class="boton boton-linea" type="button" data-demo="veterinaria" data-titulo="Clínica veterinaria o de salud">Abrir ejemplo</button>
+        </div>
+      </article>
+      <article class="ejemplo">
+        <div class="miniatura mini-bar" aria-hidden="true"><div><small>Carta · Pedidos por WhatsApp</small></div><b>Casa Dátil</b><div><i></i><i></i><i></i></div></div>
+        <div class="ejemplo-cuerpo">
+          <h3>Comercio local u hostelería</h3>
+          <p>Carta digital o catálogo de productos, con pedidos que te llegan directos al WhatsApp.</p>
+          <button class="boton boton-linea" type="button" data-demo="bar" data-titulo="Comercio local u hostelería">Abrir ejemplo</button>
+        </div>
+      </article>
+    </div>
+    <div class="cta-intermedia">
+      <p>¿Te imaginas algo así para tu negocio?</p>
+      <a class="boton boton-whatsapp" data-whatsapp href="#contacto"><svg aria-hidden="true"><use href="#ico-whatsapp"/></svg>Escríbeme y lo vemos</a>
+    </div>
+  </div>
+</section>
+
+<!-- Por qué -->
+<section class="seccion porque" id="por-que">
+  <div class="contenedor">
+    <div class="seccion-intro"><h2>¿Por qué trabajar conmigo?</h2></div>
+    <ul class="razones">
+      <li>
+        <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <div><h3>Trato cercano, en persona o a distancia</h3><p>Si estás cerca, nos vemos en tu local; si no, por videollamada. Entendemos qué necesitas y te enseño avances reales.</p></div>
+      </li>
+      <li>
+        <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <div><h3>Sin cuotas abusivas ni permanencias</h3><p>Pagas por un trabajo bien hecho, transparente y adaptado a lo que tu negocio realmente necesita hoy.</p></div>
+      </li>
+      <li>
+        <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span>
+        <div><h3>Pensado para el móvil</h3><p>Más del 80% de tus clientes te buscarán desde el teléfono; tu web cargará al instante y será facilísima de usar.</p></div>
+      </li>
+    </ul>
+    <h3 class="pasos-titulo">Cómo trabajamos</h3>
+    <ol class="pasos">
+      <li><span class="paso-num" aria-hidden="true">1</span><div><strong>Hablamos</strong><p>Quedamos en tu local o por videollamada y me cuentas qué necesita tu negocio.</p></div></li>
+      <li><span class="paso-num" aria-hidden="true">2</span><div><strong>Te enseño una propuesta</strong><p>Ves cómo quedaría tu web antes de empezar, con un presupuesto claro y sin compromiso.</p></div></li>
+      <li><span class="paso-num" aria-hidden="true">3</span><div><strong>Tu web en marcha</strong><p>La publico y te explico cómo sacarle partido para que tus clientes te encuentren.</p></div></li>
+    </ol>
   </div>
 </section>
 
@@ -382,63 +460,6 @@ dialog.vista::backdrop{background:rgba(15,37,55,.6)}
       </div>
       <figcaption class="maqueta-nota">Recreación del panel de progreso, con datos de ejemplo.</figcaption>
     </figure>
-  </div>
-</section>
-
-<!-- Ejemplos -->
-<section class="seccion" id="ejemplos">
-  <div class="contenedor">
-    <div class="seccion-intro">
-      <h2>Así podría ser la web de tu negocio</h2>
-      <p>Tres ejemplos que puedes abrir y tocar. Los negocios son inventados; el tuyo llevaría tu nombre, tus fotos y tus precios.</p>
-    </div>
-    <div class="ejemplos-rejilla">
-      <article class="ejemplo">
-        <div class="miniatura mini-barberia" aria-hidden="true"><div><small>Precios · Galería · Reserva</small></div><b>Barbería La Navaja</b><div><i></i><i></i><i></i></div></div>
-        <div class="ejemplo-cuerpo">
-          <h3>Peluquería o barbería de barrio</h3>
-          <p>Lista de precios clara, galería de cortes y un botón para reservar en dos toques.</p>
-          <button class="boton boton-linea" type="button" data-demo="barberia" data-titulo="Peluquería o barbería">Abrir ejemplo</button>
-        </div>
-      </article>
-      <article class="ejemplo">
-        <div class="miniatura mini-veterinaria" aria-hidden="true"><div><small>Citas · Horarios · Urgencias</small></div><b>Clínica Huellas</b><div><i></i><i></i><i></i></div></div>
-        <div class="ejemplo-cuerpo">
-          <h3>Clínica veterinaria o de salud</h3>
-          <p>Cita previa sin llamadas, horarios siempre a la vista y el teléfono de urgencias bien visible.</p>
-          <button class="boton boton-linea" type="button" data-demo="veterinaria" data-titulo="Clínica veterinaria o de salud">Abrir ejemplo</button>
-        </div>
-      </article>
-      <article class="ejemplo">
-        <div class="miniatura mini-bar" aria-hidden="true"><div><small>Carta · Pedidos por WhatsApp</small></div><b>Casa Dátil</b><div><i></i><i></i><i></i></div></div>
-        <div class="ejemplo-cuerpo">
-          <h3>Comercio local u hostelería</h3>
-          <p>Carta digital o catálogo de productos, con pedidos que te llegan directos al WhatsApp.</p>
-          <button class="boton boton-linea" type="button" data-demo="bar" data-titulo="Comercio local u hostelería">Abrir ejemplo</button>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Por qué -->
-<section class="seccion porque" id="por-que">
-  <div class="contenedor">
-    <div class="seccion-intro"><h2>¿Por qué trabajar conmigo?</h2></div>
-    <ul class="razones">
-      <li>
-        <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-        <div><h3>Trato cercano, en persona o a distancia</h3><p>Si estás cerca, nos vemos en tu local; si no, por videollamada. Entendemos qué necesitas y te enseño avances reales.</p></div>
-      </li>
-      <li>
-        <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <div><h3>Sin cuotas abusivas ni permanencias</h3><p>Pagas por un trabajo bien hecho, transparente y adaptado a lo que tu negocio realmente necesita hoy.</p></div>
-      </li>
-      <li>
-        <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span>
-        <div><h3>Pensado para el móvil</h3><p>Más del 80% de tus clientes te buscarán desde el teléfono; tu web cargará al instante y será facilísima de usar.</p></div>
-      </li>
-    </ul>
   </div>
 </section>
 
