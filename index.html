@@ -10,7 +10,7 @@
 <meta property="og:description" content="Ayudo a negocios de Elche a crecer en internet. Trato directo, sin intermediarios.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F2537'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' text-anchor='middle' fill='%23F9F8F6'%3EMP%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230F2537'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-size='22'%3E%3Ctspan font-family='Arial,sans-serif' fill='%239CC2B1'%3E%26lt;%3C/tspan%3E%3Ctspan font-family='Georgia,serif' font-weight='700' fill='%23F9F8F6'%3EP%3C/tspan%3E%3Ctspan font-family='Arial,sans-serif' fill='%239CC2B1'%3E/%26gt;%3C/tspan%3E%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -80,13 +80,16 @@ h3{font-size:1.2rem}
   border-bottom:1px solid var(--linea);
 }
 .nav .contenedor{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
-.nav-nombre{font-family:var(--serif);font-weight:600;font-size:1.1rem;text-decoration:none;white-space:nowrap}
+.nav-nombre{font-size:1.4rem;text-decoration:none;white-space:nowrap;line-height:1}
+.logo{font-family:var(--serif);font-weight:600;color:var(--marino);letter-spacing:-.01em;white-space:nowrap}
+.logo-s{font-family:var(--sans);font-weight:500;color:var(--salvia);margin:0 .03em}
+.logo-claro{color:#FFFFFF}.logo-claro .logo-s{color:#D6E4DD}
 .nav .texto-largo{display:none}
 @media (min-width:430px){.nav .texto-largo{display:inline}.nav .texto-corto{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{padding:40px 0 64px}
-.hero-persona{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.hero{padding:48px 0 72px;text-align:center}
+.hero-persona{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px;text-align:left}
 .foto{
   width:68px;height:68px;border-radius:50%;object-fit:cover;
   background:var(--blanco);border:2px solid var(--blanco);box-shadow:0 0 0 1.5px var(--salvia);flex:none;
@@ -97,11 +100,12 @@ h3{font-size:1.2rem}
   display:inline-block;padding:7px 14px;border-radius:999px;background:var(--salvia-suave);
   font-size:.88rem;font-weight:600;margin-bottom:18px;
 }
-.hero h1{max-width:15ch}
-.hero-sub{margin-top:20px;max-width:34rem;color:var(--texto-suave);font-size:1.1rem}
-.hero-acciones{display:flex;flex-direction:column;gap:12px;margin-top:30px}
-@media (min-width:600px){.hero-acciones{flex-direction:row}}
-@media (min-width:900px){.hero{padding:72px 0 96px}}
+.hero h1{max-width:15ch;margin-left:auto;margin-right:auto}
+.hero-sub{margin:20px auto 0;max-width:34rem;color:var(--texto-suave);font-size:1.1rem}
+.hero-firma{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--texto-suave)}
+.hero-acciones{display:flex;flex-direction:column;gap:12px;margin:32px auto 0;max-width:26rem}
+@media (min-width:600px){.hero-acciones{flex-direction:row;justify-content:center;max-width:none}}
+@media (min-width:900px){.hero{padding:96px 0 120px}}
 
 /* ---------- Proyecto destacado ---------- */
 .proyecto{background:var(--blanco);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
@@ -197,16 +201,17 @@ h3{font-size:1.2rem}
 @media (min-width:700px){.sobre-rejilla{grid-template-columns:104px 1fr;gap:36px}}
 
 /* ---------- Contacto ---------- */
-.contacto{background:var(--marino);color:var(--crema);padding:72px 0 40px}
+.contacto{background:#4E7263;color:#FFFFFF;padding:72px 0 40px}
+.contacto-logo{font-size:2.2rem;line-height:1;margin-bottom:26px}
 .contacto h2{max-width:18ch}
-.contacto-sub{margin-top:14px;color:#B9C6D1;max-width:32rem}
+.contacto-sub{margin-top:14px;color:#E3ECE7;max-width:32rem}
 .contacto-acciones{display:grid;gap:12px;margin-top:30px;max-width:26rem}
 .contacto .boton-whatsapp{min-height:60px;font-size:1.08rem}
-.contacto .boton-linea{border-color:#4A6478;color:var(--crema)}
-.contacto .boton-linea:hover{background:#1A3650}
-.contacto-dato{display:block;font-size:.82rem;font-weight:500;color:#B9C6D1}
+.contacto .boton-linea{border-color:rgba(255,255,255,.55);color:#FFFFFF}
+.contacto .boton-linea:hover{background:#43655A}
+.contacto-dato{display:block;font-size:.82rem;font-weight:500;color:#E3ECE7}
 .boton-doble{flex-direction:column;gap:2px}
-.pie{margin-top:56px;padding-top:22px;border-top:1px solid #2A4257;font-size:.86rem;color:#B9C6D1;padding-bottom:64px}
+.pie{margin-top:56px;padding-top:22px;border-top:1px solid #739487;font-size:.86rem;color:#E3ECE7;padding-bottom:64px}
 
 /* ---------- WhatsApp flotante ---------- */
 .flotante{
@@ -301,7 +306,7 @@ dialog.vista::backdrop{background:rgba(15,37,55,.6)}
 
 <header class="nav">
   <div class="contenedor">
-    <a class="nav-nombre" href="#inicio">Miguel Pina</a>
+    <a class="nav-nombre logo" href="#inicio" aria-label="Miguel Pina, ir al inicio"><span class="logo-s">&lt;</span>Pina<span class="logo-s">/&gt;</span></a>
     <a class="boton boton-whatsapp boton-pequeno" data-whatsapp href="#contacto" aria-label="Contactar por WhatsApp">
       <svg aria-hidden="true"><use href="#ico-whatsapp"/></svg>
       <span class="texto-corto">WhatsApp</span><span class="texto-largo">Contactar por WhatsApp</span>
@@ -320,13 +325,14 @@ dialog.vista::backdrop{background:rgba(15,37,55,.6)}
     </div>
     <p class="etiqueta">📍 Altabix, Elche · Ing. Informática UMH</p>
     <h1>Ayudo a negocios de Elche a crecer en internet.</h1>
-    <p class="hero-sub">Diseño páginas web modernas, rápidas y pensadas para que tus clientes te encuentren, vean tus servicios y reserven cita sin complicaciones. Trato directo, sin intermediarios.</p>
+    <p class="hero-sub">Hago que la tecnología sea sencilla para que tu negocio crezca en internet: webs rápidas, pensadas para que tus clientes te encuentren, vean tus servicios y reserven cita sin complicaciones.</p>
     <div class="hero-acciones">
       <a class="boton boton-principal" href="#ejemplos">Ver proyectos y ejemplos</a>
       <a class="boton boton-whatsapp" data-whatsapp href="#contacto">
         <svg aria-hidden="true"><use href="#ico-whatsapp"/></svg>Hablar por WhatsApp
       </a>
     </div>
+    <p class="hero-firma">Trato directo, sin intermediarios.</p>
   </div>
 </section>
 
@@ -462,6 +468,7 @@ dialog.vista::backdrop{background:rgba(15,37,55,.6)}
 <!-- Contacto y pie -->
 <footer class="contacto" id="contacto">
   <div class="contenedor">
+    <p class="logo logo-claro contacto-logo" role="img" aria-label="Pina"><span class="logo-s">&lt;</span>Pina<span class="logo-s">/&gt;</span></p>
     <h2>¿Hablamos sobre cómo mejorar la presencia de tu negocio?</h2>
     <p class="contacto-sub">Escríbeme y quedamos en tu local. La primera charla y el presupuesto no te cuestan nada.</p>
     <div class="contacto-acciones">
